@@ -1,5 +1,0 @@
-I am a research fellow at the Polytechnic University of Milan, the focuse of my work is AI, Computer Vision, and Robotics.
-More specificly I work video understanding, multi-modal learning, and human-robot collabration.
-I recieved my master's degree in Data Science and Engineering from Polytechnic University of Turin, where my thesis was ''Sequential Domain Generalisation for Egocentric Action Recognition''.
-During my master's degree I was able to win Epic@CVPR challenge during CVPR 2023.
-Currently in the Polytechnic University of Milan I am working on application of Computer Vision and AI in human-robot interaction for manufacturing purposes.
