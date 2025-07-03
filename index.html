@@ -53,6 +53,43 @@
           </tbody></table>
           <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 
+
+    <tr onmouseout="nerfcasting_stop()" onmouseover="nerfcasting_start()">
+            <td style="vertical-align:middle">
+        <div class="one">
+          <div class="two" id='prl_seqdg'>
+					  <img src='images/seqdg_teaser.png' width=100%>
+					</div>
+          <img src='images/seqdg_teaser.png' width=100%>
+        </div>
+        <script type="text/javascript">
+          function ever_start() {
+            document.getElementById('ever_image').style.opacity = "1";
+          }
+
+          function ever_stop() {
+            document.getElementById('ever_image').style.opacity = "0";
+          }
+          ever_stop()
+        </script>
+      </td>
+      <td style="padding:8px;width:80%;vertical-align:middle">
+        <a href="https://webthesis.biblio.polito.it/30812/">
+          <span class="papertitle">Domain Generalization using Action Sequences for Egocentric Action Recognition</span>
+        </a>
+        <br>
+
+        <a href="https://Ashayan97.github.io">Amirshayan Nasirimajd</a>,
+        <br>
+        <em>Master's Degree Thesis</em>, 2024
+        <br>
+        <a href="https://webthesis.biblio.polito.it/30812/">Webthesis.POLITO</a>
+        <p></p>
+        <p>
+            In this thesis, we present Sequential Domain Generalisation (SeqDG), a reconstruction-based architecture to improve the generalization of action recognition models. This is accomplished through the utilization of a language model and a dual encoder-decoder that refines the feature representation.        </p>
+      </td>
+    </tr>
+    
     <tr onmouseout="nerfcasting_stop()" onmouseover="nerfcasting_start()">
             <td style="vertical-align:middle">
         <div class="one">
@@ -73,19 +110,25 @@
         </script>
       </td>
       <td style="padding:8px;width:80%;vertical-align:middle">
-        <a href="https://webthesis.biblio.polito.it/30812/">
+        <a href="https://ashayan97.github.io/SeqDG/">
           <span class="papertitle">Sequential Domain Generalisation for Egocentric Action Recognition</span>
         </a>
         <br>
-
-        <a href="https://Ashayan97.github.io">Amirshayan Nasirimajd</a>,
+				<a href="https://Ashayan97.github.io">Amirshayan Nasirimajd</a>,
+				<a href="https://chiaraplizz.github.io/">Chiara Plizzari</a>,
+				<a href="https://sapeirone.github.io">Simone Alberto Peirone</a>,
+        <a href="https://marcociccone.github.io">Marco Ciccone</a>,
+        <a href="https://www.giuseppeaverta.me/">Giuseppe Averta</a>,
+        <a href="https://vandal.polito.it/index.php/people/barbaracaputo/">Barbara Caputo</a>
+				<br>
+        <em>Accepted at the Pattern Recognition Letters Journal</em>, 2025
         <br>
-        <em>Master's Degree Thesis</em>, 2024
-        <br>
-        <a href="https://webthesis.biblio.polito.it/30812/">Webthesis.POLITO</a>
+        <a href="https://www.sciencedirect.com/science/article/pii/S0167865525002387">Paper Link</a>
+        <a href="https://ashayan97.github.io/SeqDG/">Project Website</a>
         <p></p>
         <p>
-            In this thesis, we present Sequential Domain Generalisation (SeqDG), a reconstruction-based architecture to improve the generalization of action recognition models. This is accomplished through the utilization of a language model and a dual encoder-decoder that refines the feature representation.        </p>
+        Recognizing human activities from visual inputs, particularly through a first-person viewpoint, is essential for enabling robots to replicate human behavior. Egocentric vision, characterized by cameras worn by observers, captures diverse changes in illumination, viewpoint, and environment. This variability leads to a notable drop in the performance of Egocentric Action Recognition models when tested in environments not seen during training. In this paper, we tackle these challenges by proposing a domain generalization approach for Egocentric Action Recognition. Our insight is that action sequences often reflect consistent user intent across visual domains. By leveraging action sequences, we aim to enhance the model’s generalization ability across unseen environments. Our proposed method, named SeqDG, introduces a visual-text sequence reconstruction objective (SeqRec) that uses contextual cues from both text and visual inputs to reconstruct the central action of the sequence. Additionally, we enhance the model’s robustness by training it on mixed sequences of actions from different domains (SeqMix). We validate SeqDG on the EGTEA and EPIC-KITCHENS-100 datasets. Results on EPIC-KITCHENS-100, show that SeqDG leads to +2.4% relative average improvement in cross-domain action recognition in unseen environments, and on EGTEA the model achieved +0.6% Top-1 accuracy over SOTA in intra-domain action recognition.    
+        </p>
       </td>
     </tr>
 
