@@ -1,229 +1,267 @@
 <!DOCTYPE HTML>
 <html lang="en">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Amirshayan Nasirimajd</title>
 
     <meta name="author" content="Amirshayan Nasirimajd">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Amirshayan Nasirimajd — research fellow at Politecnico di Milano working on computer vision, video understanding, multi-modal learning, and human–robot collaboration.">
     <link rel="shortcut icon" href="images/favicon/favicon.ico" type="image/x-icon">
+
+    <!-- Set theme before paint to avoid a flash of the wrong theme -->
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('theme');
+          var theme = stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+          document.documentElement.setAttribute('data-theme', theme);
+        } catch (e) {}
+      })();
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="stylesheet.css">
-    
   </head>
 
   <body>
-    <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-      <tr style="padding:0px">
-        <td style="padding:0px">
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr style="padding:0px">
-              <td style="padding:2.5%;width:63%;vertical-align:middle">
-                <p class="name" style="text-align: center;">
-                 Amirshayan Nasirimajd
-                </p>
-                <p> I'm a research fellow at <a href="https://www.polimi.it/">Politecnico di Milano</a> in Milan, Italy, where I work on <a href="https://arise-middleware.eu/">ARISE</a>, and <a href="https://www.enfield-project.eu/">ENFIELD</a> projects as a part of EU projects.
-                </p>
-                <p>
-                  I received my master's degree in Data Science and Engineering from Polytechnic University of Turin, where my thesis was ''Sequential Domain Generalisation for Egocentric Action Recognition''. During my master's degree I was able to win Epic@CVPR challenge during CVPR 2023. In the Polytechnic University of Milan I am working on application of Computer Vision and AI in human-robot interaction for manufacturing purposes.
-                </p>
-                <p style="text-align:center">
-                  <a href="mailto:amirshayan.nasirimajd@polimi.it">Email</a> &nbsp;/&nbsp;
-                  <a href="data/CV_ENG.pdf">CV</a> &nbsp;/&nbsp;
-                  <a href="data/shayan-bio.txt">Bio</a> &nbsp;/&nbsp;
-                  <a href="https://scholar.google.com/citations?user=Dwnk2tEAAAAJ&hl=en">Scholar</a> &nbsp;/&nbsp;
-                  <a href="https://x.com/sshayan_97">Twitter</a> &nbsp;/&nbsp;
-                  <a href="https://github.com/Ashayan97">Github</a>
-                </p>
-              </td>
-              <td style="padding:2.5%;width:37%;max-width:37%">
-                <a href="images/shayan_nasiri.jpg"><img style="width:100%;max-width:100%;object-fit: cover; border-radius: 50%;" alt="profile photo" src="images/shayan_nasiri.jpg" class="hoverZoomLink"></a>
-              </td>
-            </tr>
-          </tbody></table>
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-              <tr>
-              <td style="padding:16px;width:100%;vertical-align:middle">
-                <h2>Research</h2>
-                <p>
-                  I'm interested in computer vision, video understanding, multi-modal learning and robotics. Most of my research is about use of vision language models to improve domain generalization and adaptation for egocentric action recognition:
-                </p>
-              </td>
-            </tr>
-          </tbody></table>
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+    <header class="site-nav">
+      <div class="container">
+        <a class="brand" href="#top">Amirshayan&nbsp;Nasirimajd</a>
+        <nav class="nav-links" aria-label="Sections">
+          <a href="#about">About</a>
+          <a href="#news">News</a>
+          <a href="#research">Research</a>
+        </nav>
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">
+          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.4 1.4M17.6 17.6 19 19M19 5l-1.4 1.4M6.4 17.6 5 19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+    </header>
 
-
-    <tr onmouseout="nerfcasting_stop()" onmouseover="nerfcasting_start()">
-            <td style="vertical-align:middle">
-        <div class="one">
-          <div class="two" id='prl_seqdg'>
-					  <img src='images/seqdg_teaser.png' width=100%>
-					</div>
-          <img src='images/seqdg_teaser.png' width=100%>
+    <main id="top">
+      <!-- ===================== Hero ===================== -->
+      <section class="hero container reveal reveal-1">
+        <div class="hero-avatar">
+          <a href="images/shayan_nasiri.jpg">
+            <img src="images/shayan_nasiri.jpg" alt="Amirshayan Nasirimajd">
+          </a>
         </div>
-        <script type="text/javascript">
-          function ever_start() {
-            document.getElementById('ever_image').style.opacity = "1";
-          }
+        <div class="hero-text">
+          <h1 class="hero-name">Amirshayan Nasirimajd</h1>
+          <p class="hero-role">PhD Researcher at <a href="https://tuebingen.ai/">Tübingen AI Center</a></p>
+          <p class="hero-tagline">
+            Hello! I am Shayan, and I am currently a PhD student at the Tübingen AI Center in Germany under the supervision of  <a href="http://akoepke.github.io/">Dr. Almut Sophia Koepke</a>, and the co-supervision of <a href="https://hildekuehne.github.io/">Dr. Hilde Kuhne</a>. 
+            I previously did research as a fellow at Politecnico di Milano in Italy, where I worked on the EU-funded projects 
+            <a href="https://arise-middleware.eu/">ARISE</a> and
+            <a href="https://www.enfield-project.eu/">ENFIELD</a>.
+            Furthermore, I received my master's degree in Data Science and Engineering from the Polytechnic University of Turin, 
+            where I worked on Domain Adaptation and Generalization of Egocentric videos under the supervision of <a href="https://www.giuseppeaverta.me/">Dr. Giuseppe Averta</a> and <a href="https://chiaraplizz.github.io/">Dr. Chiara Plizzari</a>.
+            <!-- My research focuses on multi-modal learning for long-term video understanding and Robotics. Currently I am doing my PhD at <a href="http://akoepke.github.io/">Tübingen AI Center</a> Undersupervision of <a href="http://akoepke.github.io/">Dr. Almut Sophia Koepke</a> in Germany.
+            I previously did research fellow at <a href="https://www.polimi.it/">Politecnico di Milano</a> in Italy, where I worked on the EU-funded projects,
+            <a href="https://arise-middleware.eu/">ARISE</a> and
+            <a href="https://www.enfield-project.eu/">ENFIELD</a> projects.
+            Furthermore, I received my master's degree in Data Science and Engineering from the Polytechnic University of Turin, working on Domain Adaptation and Generalization under the supervision of <a href="https://www.giuseppeaverta.me/">Dr. Giuseppe Averta</a> and <a href="https://chiaraplizz.github.io/">Dr. Chiara Plizzari</a>. -->
+          </p>
+          <div class="links">
+            <a class="pill" href="mailto:amirshayan.nasirimajd@polimi.it">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="m4 7 8 6 8-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Email
+            </a>
+            <a class="pill" href="data/CV_ENG.pdf">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M14 3v5h5M9 13h6M9 17h6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              CV
+            </a>
+            <a class="pill" href="data/shayan-bio.txt">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M4 21c0-4 3.6-6 8-6s8 2 8 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              Bio
+            </a>
+            <a class="pill" href="https://scholar.google.com/citations?user=Dwnk2tEAAAAJ&hl=en">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4 2 9l10 5 10-5-10-5Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M6 11v4c0 1.5 2.7 3 6 3s6-1.5 6-3v-4M22 9v5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              Scholar
+            </a>
+            <a class="pill" href="https://x.com/sshayan_97">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.66l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231 5.45-6.231Zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77Z"/></svg>
+              Twitter
+            </a>
+            <a class="pill" href="https://github.com/Ashayan97">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .5C5.73.5.5 5.74.5 12.02c0 5.1 3.29 9.42 7.86 10.95.58.11.79-.25.79-.56 0-.27-.01-1.16-.02-2.1-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.25.45-2.28 1.18-3.08-.12-.29-.51-1.46.11-3.05 0 0 .96-.31 3.15 1.18a10.9 10.9 0 0 1 2.87-.39c.97 0 1.96.13 2.87.39 2.19-1.49 3.15-1.18 3.15-1.18.62 1.59.23 2.76.11 3.05.73.8 1.18 1.83 1.18 3.08 0 4.41-2.69 5.39-5.25 5.67.41.36.78 1.05.78 2.12 0 1.53-.01 2.76-.01 3.14 0 .31.21.68.8.56A11.53 11.53 0 0 0 23.5 12.02C23.5 5.74 18.27.5 12 .5Z"/></svg>
+              GitHub
+            </a>
+          </div>
+        </div>
+      </section>
 
-          function ever_stop() {
-            document.getElementById('ever_image').style.opacity = "0";
-          }
-          ever_stop()
-        </script>
-      </td>
-      <td style="padding:8px;width:80%;vertical-align:middle">
-        <a href="https://ashayan97.github.io/SeqDG/">
-          <span class="papertitle">Sequential Domain Generalisation for Egocentric Action Recognition</span>
-        </a>
-        <br>
-				<a href="https://Ashayan97.github.io">Amirshayan Nasirimajd</a>,
-				<a href="https://chiaraplizz.github.io/">Chiara Plizzari</a>,
-				<a href="https://sapeirone.github.io">Simone Alberto Peirone</a>,
-        <a href="https://marcociccone.github.io">Marco Ciccone</a>,
-        <a href="https://www.giuseppeaverta.me/">Giuseppe Averta</a>,
-        <a href="https://vandal.polito.it/index.php/people/barbaracaputo/">Barbara Caputo</a>
-				<br>
-        <em>Accepted at the Pattern Recognition Letters Journal</em>, 2025
-        <br>
-        <a href="https://www.sciencedirect.com/science/article/pii/S0167865525002387">Paper Link</a>,
-        <a href="https://ashayan97.github.io/SeqDG/">Project Website</a>
-        <p></p>
+      <!-- ===================== News ===================== -->
+      <section id="news" class="section container reveal reveal-2">
+        <h2 class="section-title">News</h2>
+        <ul class="news-list">
+          <li class="news-item">
+            <span class="news-year">Jan, 2026</span>
+            <span class="news-text"> I am starting my <strong>PhD</strong> at Tubingen AI center.</span>
+          </li>
+          <li class="news-item">
+            <span class="news-year">Oct, 2025</span>
+            <span class="news-text"><strong>SeqDG</strong> accepted at the <em>Pattern Recognition Letters</em> journal.</span>
+          </li>
+          <li class="news-item">
+            <span class="news-year">Apr, 2024</span>
+            <span class="news-text">Completed my MSc in Data Science &amp; Engineering at Politecnico di Torino.</span>
+          </li>
+          <li class="news-item">
+            <span class="news-year">Jun, 2023</span>
+            <span class="news-text">Won the <strong>EPIC@CVPR</strong> (EPIC-KITCHENS-100 UDA) challenge — oral at CVPR 2023.</span>
+          </li>
+        </ul>
+      </section>
+
+      <!-- ===================== About =====================
+      <section id="about" class="section container reveal reveal-3">
+        <h2 class="section-title">About</h2>
         <p>
-        Recognizing human activities from visual inputs, particularly through a first-person viewpoint, is essential for enabling robots to replicate human behavior. Egocentric vision, characterized by cameras worn by observers, captures diverse changes in illumination, viewpoint, and environment. This variability leads to a notable drop in the performance of Egocentric Action Recognition models when tested in environments not seen during training. In this paper, we tackle these challenges by proposing a domain generalization approach for Egocentric Action Recognition. Our insight is that action sequences often reflect consistent user intent across visual domains. By leveraging action sequences, we aim to enhance the model’s generalization ability across unseen environments. Our proposed method, named SeqDG, introduces a visual-text sequence reconstruction objective (SeqRec) that uses contextual cues from both text and visual inputs to reconstruct the central action of the sequence. Additionally, we enhance the model’s robustness by training it on mixed sequences of actions from different domains (SeqMix). We validate SeqDG on the EGTEA and EPIC-KITCHENS-100 datasets. Results on EPIC-KITCHENS-100, show that SeqDG leads to +2.4% relative average improvement in cross-domain action recognition in unseen environments, and on EGTEA the model achieved +0.6% Top-1 accuracy over SOTA in intra-domain action recognition.    
+          I'm a research fellow at <a href="https://www.polimi.it/">Politecnico di Milano</a> in Milan,
+          Italy, where I work on the <a href="https://arise-middleware.eu/">ARISE</a> and
+          <a href="https://www.enfield-project.eu/">ENFIELD</a> projects as part of EU projects.
         </p>
-      </td>
-    </tr>
-    
-    
-    <tr onmouseout="nerfcasting_stop()" onmouseover="nerfcasting_start()">
-            <td style="vertical-align:middle">
-        <div class="one">
-          <div class="two" id='thesis'>
-					  <img src='images/thesis.png' width=100%>
-					</div>
-          <img src='images/thesis.png' width=100%>
-        </div>
-        <script type="text/javascript">
-          function ever_start() {
-            document.getElementById('ever_image').style.opacity = "1";
-          }
-
-          function ever_stop() {
-            document.getElementById('ever_image').style.opacity = "0";
-          }
-          ever_stop()
-        </script>
-      </td>
-      <td style="padding:8px;width:80%;vertical-align:middle">
-        <a href="https://webthesis.biblio.polito.it/30812/">
-          <span class="papertitle">Sequential Domain Generalisation for Egocentric Action Recognition</span>
-        </a>
-        <br>
-
-        <a href="https://Ashayan97.github.io">Amirshayan Nasirimajd</a>,
-        <br>
-        <em>Master's Degree Thesis</em>, 2024
-        <br>
-        <a href="https://webthesis.biblio.polito.it/30812/">Webthesis.POLITO</a>
-        <p></p>
         <p>
-            In this thesis, we present Sequential Domain Generalisation (SeqDG), a reconstruction-based architecture to improve the generalization of action recognition models. This is accomplished through the utilization of a language model and a dual encoder-decoder that refines the feature representation.        </p>
-      </td>
-    </tr>
-
-
-
-    <tr onmouseout="ever_stop()" onmouseover="ever_start()">
-      <td style="vertical-align:middle">
-        <div class="one">
-          <div class="two" id='ever_image'>
-					  <img src='images/mix_seq.png' width=100%>
-					</div>
-          <img src='images/mix_seq.png' width=100%>
-        </div>
-        <script type="text/javascript">
-          function ever_start() {
-            document.getElementById('ever_image').style.opacity = "1";
-          }
-
-          function ever_stop() {
-            document.getElementById('ever_image').style.opacity = "0";
-          }
-          ever_stop()
-        </script>
-      </td>
-      <td style="padding:8px;width:80%;vertical-align:middle">
-        <a href="https://arxiv.org/pdf/2307.12837">
-			<span class="papertitle">EPIC-KITCHENS-100 Unsupervised Domain Adaptation Challenge: Mixed Sequences Prediction
-</span>
-        </a>
-        <br>
-				<a href="https://Ashayan97.github.io">Amirshayan Nasirimajd</a>,
-				<a href="https://scholar.google.com/citations?user=K0efPssAAAAJ">Simone Alberto Peirone</a>,
-				<a href="https://chiaraplizz.github.io/">Chiara Plizzari</a>,
-        <a href="https://vandal.polito.it/index.php/people/barbaracaputo/">Barbara Caputo</a>
-				<br>
-        <em>IEEE/CVF Conference on Computer Vision and Pattern Recognition Workshop</em>, 2023
-        <br>
-        <a href="https://www.youtube.com/watch?v=Tqop4kO8Y_c&t=20245s">CVPR Oral Presentation</a>
-        /
-        <a href="https://arxiv.org/pdf/2307.12837">arXiv</a>
-        <p></p>
-        <p>
-      The Winner of EPIC-Kitchens-100 Unsupervised Domain Adaptation (UDA) Challenge in Action Recognition. Our approach is based on the idea that the order in which actions are performed is similar between the source and target domains. Based on this, we generate a modified sequence by randomly combining actions from the source and target domains. As only unlabelled target data are available under the UDA setting, we use a standard pseudo-labeling strategy for extracting action labels for the target. We then ask the network to predict the resulting action sequence. This allows to integrate information from both domains during training and to achieve better transfer results on target. Additionally, to better incorporate sequence information, we use a language model to filter unlikely sequences.        </p>
-      </td>
-    </tr>
-
-<!-- 
-    <tr onmouseout="nerfcasting_stop()" onmouseover="nerfcasting_start()">
-            <td style="padding:16px;width:20%;vertical-align:middle">
-        <div class="one">
-          <div class="two" id='anomaly_detect'>
-					  <img src='images/anomaly_detect.png' width=100%>
-					</div>
-          <img src='images/anomaly_detect.png' width=100%>
-        </div>
-        <script type="text/javascript">
-          function ever_start() {
-            document.getElementById('ever_image').style.opacity = "1";
-          }
-
-          function ever_stop() {
-            document.getElementById('ever_image').style.opacity = "0";
-          }
-          ever_stop()
-        </script>
-      </td>
-      <td style="padding:8px;width:80%;vertical-align:middle">
-        <a href="https://www.techrxiv.org/doi/full/10.36227/techrxiv.19400612.v1">
-          <span class="papertitle">Anomaly Detection Based on Sigmoid Metric and Object Area Filtering in Hyperspectral Images</span>
-        </a>
-        <br>
-
-        <a href="https://scholar.google.com/citations?user=Z-t9EAMAAAAJ&hl=en">Hamid Esmaeili Najafabadi</a>,
-        <strong>Zhenkai Zhang</strong>,
-				<a href="http://localhost:63342/shayan.github.io/index.html?_ijt=thhlbks18j2kemh5ccag8s2ova&_ij_reload=RELOAD_ON_SAVE">Mahdi Yousefan</a>,
-				<a href="https://Ashayan97.github.io">Amirshayan Nasirimajd</a>,
-        <br>
-        <em>Techrxiv</em>, 2023
-        <br>
-        <a href="https://www.techrxiv.org/doi/full/10.36227/techrxiv.19400612.v1">Techrxiv</a>
-        <p></p>
-        <p>
-        This paper outlines a new approach to detect anomalies in hyperspectral images based on peripheral pixels. The proposed  methodology contains two main steps. First, a new distance score is introduced based on the sigmoid function and root mean  square error (RMSE). We estimate how likely the target pixel is an anomaly by averaging the new metric over its neighboring  widow.
+          I received my master's degree in Data Science and Engineering from the Polytechnic University of
+          Turin, where my thesis was "Sequential Domain Generalisation for Egocentric Action Recognition".
+          During my master's degree I won the Epic@CVPR challenge at CVPR 2023. At the Polytechnic University
+          of Milan I work on applications of Computer Vision and AI in human–robot interaction for
+          manufacturing purposes.
         </p>
-      </td>
-    </tr>
- -->
-            </tr>
+      </section> -->
 
-          </tbody>
-          </table>
+      <!-- ===================== Research ===================== -->
+      <section id="research" class="section container">
+        <h2 class="section-title">Research</h2>
+        <p class="section-intro">
+          Currently my research interest lies in video understanding, multi-modal learning and robotics. Most of
+          my research focuse in on role of different modalities beside vision and language in better understanding long-term videos. 
+        </p>
 
-        </td>
-      </tr>
-    </table>
+        <!-- SeqDG -->
+        <article class="pub-card">
+          <a class="pub-media" href="https://ashayan97.github.io/SeqDG/">
+            <img src="images/seqdg_teaser.png" alt="SeqDG teaser figure">
+          </a>
+          <div class="pub-body">
+            <a class="pub-title" href="https://ashayan97.github.io/SeqDG/">Sequential Domain Generalisation for Egocentric Action Recognition</a>
+            <p class="pub-authors">
+              <a class="me" href="https://Ashayan97.github.io">Amirshayan Nasirimajd</a>,
+              <a href="https://chiaraplizz.github.io/">Chiara Plizzari</a>,
+              <a href="https://sapeirone.github.io">Simone Alberto Peirone</a>,
+              <a href="https://marcociccone.github.io">Marco Ciccone</a>,
+              <a href="https://www.giuseppeaverta.me/">Giuseppe Averta</a>,
+              <a href="https://vandal.polito.it/index.php/people/barbaracaputo/">Barbara Caputo</a>
+            </p>
+            <p class="pub-venue"><em>Accepted at the Pattern Recognition Letters Journal</em>, 2025</p>
+            <div class="pub-links">
+              <a href="https://www.sciencedirect.com/science/article/pii/S0167865525002387">Paper</a>
+              <a href="https://ashayan97.github.io/SeqDG/">Project Website</a>
+            </div>
+            <p class="pub-abstract">
+              Recognizing human activities from visual inputs, particularly through a first-person viewpoint,
+              is essential for enabling robots to replicate human behavior. Egocentric vision, characterized by
+              cameras worn by observers, captures diverse changes in illumination, viewpoint, and environment.
+              This variability leads to a notable drop in the performance of Egocentric Action Recognition
+              models when tested in environments not seen during training. In this paper, we tackle these
+              challenges by proposing a domain generalization approach for Egocentric Action Recognition. Our
+              insight is that action sequences often reflect consistent user intent across visual domains. By
+              leveraging action sequences, we aim to enhance the model's generalization ability across unseen
+              environments. Our proposed method, named SeqDG, introduces a visual-text sequence reconstruction
+              objective (SeqRec) that uses contextual cues from both text and visual inputs to reconstruct the
+              central action of the sequence. Additionally, we enhance the model's robustness by training it on
+              mixed sequences of actions from different domains (SeqMix). We validate SeqDG on the EGTEA and
+              EPIC-KITCHENS-100 datasets. Results on EPIC-KITCHENS-100 show that SeqDG leads to +2.4% relative
+              average improvement in cross-domain action recognition in unseen environments, and on EGTEA the
+              model achieved +0.6% Top-1 accuracy over SOTA in intra-domain action recognition.
+            </p>
+          </div>
+        </article>
+
+        <!-- Master's thesis -->
+        <article class="pub-card">
+          <a class="pub-media" href="https://webthesis.biblio.polito.it/30812/">
+            <img src="images/thesis.png" alt="Master's thesis teaser figure">
+          </a>
+          <div class="pub-body">
+            <a class="pub-title" href="https://webthesis.biblio.polito.it/30812/">Sequential Domain Generalisation for Egocentric Action Recognition</a>
+            <p class="pub-authors">
+              <a class="me" href="https://Ashayan97.github.io">Amirshayan Nasirimajd</a>
+            </p>
+            <p class="pub-venue"><em>Master's Degree Thesis</em>, 2024</p>
+            <div class="pub-links">
+              <a href="https://webthesis.biblio.polito.it/30812/">Webthesis · PoliTo</a>
+            </div>
+            <p class="pub-abstract">
+              In this thesis, we present Sequential Domain Generalisation (SeqDG), a reconstruction-based
+              architecture to improve the generalization of action recognition models. This is accomplished
+              through the utilization of a language model and a dual encoder-decoder that refines the feature
+              representation.
+            </p>
+          </div>
+        </article>
+
+        <!-- EPIC-KITCHENS-100 UDA -->
+        <article class="pub-card">
+          <a class="pub-media" href="https://arxiv.org/pdf/2307.12837">
+            <img src="images/mix_seq.png" alt="Mixed Sequences Prediction teaser figure">
+          </a>
+          <div class="pub-body">
+            <a class="pub-title" href="https://arxiv.org/pdf/2307.12837">EPIC-KITCHENS-100 Unsupervised Domain Adaptation Challenge: Mixed Sequences Prediction</a>
+            <p class="pub-authors">
+              <a class="me" href="https://Ashayan97.github.io">Amirshayan Nasirimajd</a>,
+              <a href="https://scholar.google.com/citations?user=K0efPssAAAAJ">Simone Alberto Peirone</a>,
+              <a href="https://chiaraplizz.github.io/">Chiara Plizzari</a>,
+              <a href="https://vandal.polito.it/index.php/people/barbaracaputo/">Barbara Caputo</a>
+            </p>
+            <p class="pub-venue"><em>IEEE/CVF Conference on Computer Vision and Pattern Recognition Workshop</em>, 2023</p>
+            <div class="pub-links">
+              <a href="https://www.youtube.com/watch?v=Tqop4kO8Y_c&t=20245s">CVPR Oral Presentation</a>
+              <a href="https://arxiv.org/pdf/2307.12837">arXiv</a>
+            </div>
+            <p class="pub-abstract">
+              The winner of the EPIC-Kitchens-100 Unsupervised Domain Adaptation (UDA) Challenge in Action
+              Recognition. Our approach is based on the idea that the order in which actions are performed is
+              similar between the source and target domains. Based on this, we generate a modified sequence by
+              randomly combining actions from the source and target domains. As only unlabelled target data are
+              available under the UDA setting, we use a standard pseudo-labeling strategy for extracting action
+              labels for the target. We then ask the network to predict the resulting action sequence. This
+              allows us to integrate information from both domains during training and to achieve better
+              transfer results on target. Additionally, to better incorporate sequence information, we use a
+              language model to filter unlikely sequences.
+            </p>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>© <span id="year">2025</span> Amirshayan Nasirimajd</p>
+        <p>Design inspired by <a href="https://jonbarron.info/">Jon Barron</a>'s academic website.</p>
+      </div>
+    </footer>
+
+    <script>
+      (function () {
+        var btn = document.getElementById('theme-toggle');
+        if (btn) {
+          btn.addEventListener('click', function () {
+            var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+            var next = cur === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', next);
+            try { localStorage.setItem('theme', next); } catch (e) {}
+          });
+        }
+        var y = document.getElementById('year');
+        if (y) { y.textContent = new Date().getFullYear(); }
+      })();
+    </script>
   </body>
 </html>
