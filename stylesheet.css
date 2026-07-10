@@ -84,7 +84,8 @@ img { max-width: 100%; display: block; }
   width: 100%;
   max-width: 880px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding-left: max(24px, env(safe-area-inset-left));
+  padding-right: max(24px, env(safe-area-inset-right));
 }
 
 /* ---------- Navigation ---------- */
@@ -372,6 +373,10 @@ main { padding-bottom: 64px; }
 }
 
 @media (max-width: 640px) {
+  .container {
+    padding-left: max(28px, env(safe-area-inset-left));
+    padding-right: max(28px, env(safe-area-inset-right));
+  }
   .hero {
     flex-direction: column;
     text-align: center;
