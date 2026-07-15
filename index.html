@@ -46,10 +46,28 @@
     <main id="top">
       <!-- ===================== Hero ===================== -->
       <section id="about" class="hero container reveal reveal-1">
-        <div class="hero-avatar">
-          <a href="images/shayan_nasiri.jpg">
+        <div class="hero-figure">
+          <div class="thought">
+            <div class="thought-cloud">
+              <span class="puff puff-1"></span>
+              <span class="puff puff-2"></span>
+              <span class="puff puff-3"></span>
+              <span class="puff puff-4"></span>
+              <span class="puff puff-5"></span>
+              <span class="puff puff-6"></span>
+              <span class="puff puff-7"></span>
+              <span class="puff puff-8"></span>
+              <p class="thought-text"> <strong> Currently try to find a solution for better Audio-Visual Synchronization</strong></p>
+            </div>
+            <span class="thought-dots" aria-hidden="true">
+              <i class="dot dot-1"></i>
+              <i class="dot dot-2"></i>
+              <i class="dot dot-3"></i>
+            </span>
+          </div>
+          <button id="story-trigger" class="hero-avatar" type="button" aria-label="Open story" aria-haspopup="dialog">
             <img src="images/shayan_nasiri.jpg" alt="Amirshayan Nasirimajd">
-          </a>
+          </button>
         </div>
         <div class="hero-text">
           <h1 class="hero-name">Amirshayan Nasirimajd</h1>
@@ -142,6 +160,32 @@
         <p class="section-intro">
           Currently, my research interests lie in video understanding, multimodal learning, and robotics. Most of my research focuses on the role of different modalities besides vision and language in better understanding long-term videos.
         </p>
+
+        <!-- AV sync
+        <article class="pub-card">
+          <a class="pub-media" href="https://ashayan97.github.io/SeqDG/">
+            <img src="images/seqdg_teaser.png" alt="SeqDG teaser figure">
+          </a>
+          <div class="pub-body">
+            <a class="pub-title" href="https://ashayan97.github.io/SeqDG/">Sequential Domain Generalisation for Egocentric Action Recognition</a>
+            <p class="pub-authors">
+              <a class="me" href="https://Ashayan97.github.io">Amirshayan Nasirimajd</a>,
+              <a href="https://chiaraplizz.github.io/">Chiara Plizzari</a>,
+              <a href="https://sapeirone.github.io">Simone Alberto Peirone</a>,
+              <a href="https://marcociccone.github.io">Marco Ciccone</a>,
+              <a href="https://www.giuseppeaverta.me/">Giuseppe Averta</a>,
+              <a href="https://vandal.polito.it/index.php/people/barbaracaputo/">Barbara Caputo</a>
+            </p>
+            <p class="pub-venue"><em>Accepted at the Pattern Recognition Letters Journal</em>, 2025</p>
+            <div class="pub-links">
+              <a href="https://www.sciencedirect.com/science/article/pii/S0167865525002387">Paper</a>
+              <a href="https://ashayan97.github.io/SeqDG/">Project Website</a>
+            </div>
+            <p class="pub-abstract">
+              
+            </p>
+          </div>
+        </article> -->
 
         <!-- SeqDG -->
         <article class="pub-card">
@@ -246,6 +290,26 @@
       </div>
     </footer>
 
+    <!-- ===================== Story viewer ===================== -->
+    <div id="story" class="story" hidden>
+      <div class="story-backdrop" data-story-close></div>
+      <div class="story-card" role="dialog" aria-modal="true" aria-label="Story by Amirshayan Nasirimajd" tabindex="-1">
+        <img class="story-blur" src="images/story_pic.png" alt="" aria-hidden="true">
+        <div class="story-progress"><span class="story-progress-fill"></span></div>
+        <div class="story-head">
+          <img class="story-avatar" src="images/shayan_nasiri.jpg" alt="">
+          <span class="story-user">Amirshayan Nasirimajd</span>
+          <span class="story-time">now</span>
+          <button class="story-close" type="button" aria-label="Close story" data-story-close>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </button>
+        </div>
+        <img class="story-media" src="images/story_pic.png" alt="Story photo">
+        <button class="story-zone story-prev" type="button" aria-label="Replay story"></button>
+        <button class="story-zone story-next" type="button" aria-label="Close story"></button>
+      </div>
+    </div>
+
     <script>
       (function () {
         var btn = document.getElementById('theme-toggle');
@@ -259,6 +323,90 @@
         }
         var y = document.getElementById('year');
         if (y) { y.textContent = new Date().getFullYear(); }
+      })();
+    </script>
+
+    <script>
+      /* Instagram-style story viewer for the hero avatar */
+      (function () {
+        var trigger = document.getElementById('story-trigger');
+        var story = document.getElementById('story');
+        if (!trigger || !story) { return; }
+
+        var card = story.querySelector('.story-card');
+        var fill = story.querySelector('.story-progress-fill');
+        var isOpen = false;
+        var lastFocus = null;
+
+        // Anchor the open/close animation on the avatar, so the card grows out of it.
+        function setOrigin() {
+          var r = trigger.getBoundingClientRect();
+          card.style.setProperty('--from-x', Math.round(r.left + r.width / 2 - window.innerWidth / 2) + 'px');
+          card.style.setProperty('--from-y', Math.round(r.top + r.height / 2 - window.innerHeight / 2) + 'px');
+        }
+
+        function restartProgress() {
+          fill.style.animation = 'none';
+          void fill.offsetWidth;
+          fill.style.animation = '';
+          fill.style.animationPlayState = '';
+        }
+
+        function openStory() {
+          if (isOpen) { return; }
+          isOpen = true;
+          lastFocus = document.activeElement;
+          setOrigin();
+          card.classList.remove('is-closing');
+          story.hidden = false;
+          document.body.classList.add('story-open');
+          restartProgress();
+          card.focus();
+        }
+
+        function closeStory() {
+          if (!isOpen) { return; }
+          isOpen = false;
+          setOrigin();
+          fill.style.animationPlayState = 'paused';
+          card.classList.add('is-closing');
+        }
+
+        card.addEventListener('animationend', function (e) {
+          if (e.target !== card || !card.classList.contains('is-closing')) { return; }
+          card.classList.remove('is-closing');
+          story.hidden = true;
+          document.body.classList.remove('story-open');
+          if (lastFocus && lastFocus.focus) { lastFocus.focus(); }
+        });
+
+        // The story runs itself out, then closes.
+        fill.addEventListener('animationend', closeStory);
+
+        trigger.addEventListener('click', openStory);
+
+        story.addEventListener('click', function (e) {
+          if (e.target.closest('[data-story-close]') || e.target.closest('.story-next')) { closeStory(); }
+          else if (e.target.closest('.story-prev')) { restartProgress(); }
+        });
+
+        // Press and hold pauses, like the real thing.
+        card.addEventListener('pointerdown', function () { fill.style.animationPlayState = 'paused'; });
+        document.addEventListener('pointerup', function () {
+          if (isOpen) { fill.style.animationPlayState = 'running'; }
+        });
+
+        document.addEventListener('keydown', function (e) {
+          if (!isOpen) { return; }
+          if (e.key === 'Escape') { closeStory(); return; }
+          if (e.key !== 'Tab') { return; }
+          // Keep focus inside the dialog while it is open.
+          var f = card.querySelectorAll('button');
+          var first = f[0];
+          var last = f[f.length - 1];
+          if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+          else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+        });
       })();
     </script>
   </body>
